@@ -34,6 +34,10 @@ namespace Inlamning_3_ra_kod
             string filePath = @"C:\Users\Admin\stackvalues.txt";
             X = Y = Z = T = 0;
             entry = "";
+            string[] letters = new string[]
+            {
+                A = "", B = "", C = "", D = "", E = "", F = "", G  ="", H = ""
+            };
 
             if (File.Exists(filePath))
             {
@@ -55,16 +59,36 @@ namespace Inlamning_3_ra_kod
                         case "Z":
                             Z = double.Parse(values[1]);
                             break;
+                        case "A":
+                            A = values[1];
+                            break;
+                        case "B":
+                            B = values[1];
+                            break;
+                        case "C":
+                            C = values[1];
+                            break;
+                        case "D":
+                            D = values[1];
+                            break;
+                        case "E":
+                            E = values[1];
+                            break;
+                        case "F":
+                            F = values[1];
+                            break;
+                        case "G":
+                            G = values[1];
+                            break;
+                        case "H":
+                            H = values[1];
+                            break;
                         default:
                             break;
                     }
                 }
             }
 
-            string[] letters = new string[]
-           {
-                A = "", B = "", C = "", D = "", E = "", F = "", G  ="", H = ""
-           };
 
         }
         /* METHOD: Exit
@@ -74,7 +98,32 @@ namespace Inlamning_3_ra_kod
          */
         public void Exit()
         {
+            string filePath = @"C:\Users\Admin\stackvalues.txt";
+            string[] values = new string[]
+            {
+                $"A={A}",
+                $"B={B}",
+                $"C={C}",
+                $"D={D}",
+                $"E={E}",
+                $"F={F}",
+                $"G={G}",
+                $"H={H}",
+                $"X={X}",
+                $"Y={Y}",
+                $"T={T}",
+                $"Z={Z}",
+            };
 
+            if (File.Exists(filePath))
+            {
+                StreamWriter writer = new StreamWriter(filePath);
+                foreach (var value in values)
+                {
+                    writer.WriteLine(value);
+                }
+                writer.Close();
+            }
         }
         /* METHOD: StackString
          * PURPOSE: construct a string to write out in a stack view
@@ -359,12 +408,11 @@ namespace Inlamning_3_ra_kod
                     break;
                 case "F":
                     RollSetX(double.Parse(F));
-
                     F = "";
                     break;
                 case "G":
                     RollSetX(double.Parse(G));
-                    G = ""; 
+                    G = "";
                     break;
                 case "H":
                     RollSetX(double.Parse(H));
