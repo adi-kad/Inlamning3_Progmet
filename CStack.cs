@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,12 +31,41 @@ namespace Inlamning_3_ra_kod
          */
         public CStack()
         {
+            string filePath = @"C:\Users\Admin\stackvalues.txt";
             X = Y = Z = T = 0;
             entry = "";
+
+            if (File.Exists(filePath))
+            {
+                string[] lines = File.ReadAllLines(filePath);
+                foreach (var line in lines)
+                {
+                    string[] values = line.Split('=');
+                    switch (values[0])
+                    {
+                        case "X":
+                            X = double.Parse(values[1]);
+                            break;
+                        case "Y":
+                            Y = double.Parse(values[1]);
+                            break;
+                        case "T":
+                            T = double.Parse(values[1]);
+                            break;
+                        case "Z":
+                            Z = double.Parse(values[1]);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
             string[] letters = new string[]
            {
                 A = "", B = "", C = "", D = "", E = "", F = "", G  ="", H = ""
            };
+
         }
         /* METHOD: Exit
          * PURPOSE: called on exit, prepared for saving
@@ -275,7 +305,7 @@ namespace Inlamning_3_ra_kod
                     B = X.ToString();
                     break;
                 case "C":
-                     C= X.ToString();
+                    C = X.ToString();
                     break;
                 case "D":
                     D = X.ToString();
@@ -295,6 +325,7 @@ namespace Inlamning_3_ra_kod
                 default:
                     break;
             }
+
         }
         /* METHOD: GetVar
          * PURPOSE: 
@@ -307,34 +338,36 @@ namespace Inlamning_3_ra_kod
             switch (letterAdress)
             {
                 case "A":
-                    X = int.Parse(A);
+                    RollSetX(double.Parse(A));
                     A = "";
                     break;
                 case "B":
-                    X = int.Parse(B);
+                    RollSetX(double.Parse(B));
                     B = "";
                     break;
                 case "C":
-                    X = int.Parse(C);
+                    RollSetX(double.Parse(C));
                     C = "";
                     break;
                 case "D":
-                    X = int.Parse(D);
+                    RollSetX(double.Parse(D));
                     D = "";
                     break;
                 case "E":
-                    X = int.Parse(E);
+                    RollSetX(double.Parse(E));
                     E = "";
                     break;
                 case "F":
-                    X = int.Parse(F);
+                    RollSetX(double.Parse(F));
+
                     F = "";
                     break;
                 case "G":
-                    X = int.Parse(G);
-                    G = ""; break;
+                    RollSetX(double.Parse(G));
+                    G = ""; 
+                    break;
                 case "H":
-                    X = int.Parse(H);
+                    RollSetX(double.Parse(H));
                     H = "";
                     break;
                 default:
