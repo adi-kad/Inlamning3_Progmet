@@ -31,7 +31,7 @@ namespace Inlamning_3_ra_kod
          */
         public CStack()
         {
-            string filePath = @"C:\Users\Admin\stackvalues.txt";
+            string filePath = @"C:\Users\Admin\source\repos\Inlamning3_Progmet\stackvalues.txt";
             X = Y = Z = T = 0;
             entry = "";
             string[] letters = new string[]
@@ -89,7 +89,6 @@ namespace Inlamning_3_ra_kod
                 }
             }
 
-
         }
         /* METHOD: Exit
          * PURPOSE: called on exit, prepared for saving
@@ -98,7 +97,7 @@ namespace Inlamning_3_ra_kod
          */
         public void Exit()
         {
-            string filePath = @"C:\Users\Admin\stackvalues.txt";
+            string filePath = @"C:\Users\Admin\source\repos\Inlamning3_Progmet\stackvalues.txt";
             string[] values = new string[]
             {
                 $"A={A}",
@@ -387,36 +386,28 @@ namespace Inlamning_3_ra_kod
             switch (letterAdress)
             {
                 case "A":
-                    RollSetX(double.Parse(A));
-                    A = "";
+                    RollSetX(double.Parse(A));              
                     break;
                 case "B":
                     RollSetX(double.Parse(B));
-                    B = "";
                     break;
                 case "C":
-                    RollSetX(double.Parse(C));
-                    C = "";
+                    RollSetX(double.Parse(C));                
                     break;
                 case "D":
-                    RollSetX(double.Parse(D));
-                    D = "";
+                    RollSetX(double.Parse(D));               
                     break;
                 case "E":
-                    RollSetX(double.Parse(E));
-                    E = "";
+                    RollSetX(double.Parse(E));               
                     break;
                 case "F":
-                    RollSetX(double.Parse(F));
-                    F = "";
+                    RollSetX(double.Parse(F));                
                     break;
                 case "G":
-                    RollSetX(double.Parse(G));
-                    G = "";
+                    RollSetX(double.Parse(G));    
                     break;
                 case "H":
-                    RollSetX(double.Parse(H));
-                    H = "";
+                    RollSetX(double.Parse(H));                  
                     break;
                 default:
                     break;
