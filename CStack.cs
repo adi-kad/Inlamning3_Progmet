@@ -20,14 +20,16 @@ namespace Inlamning_3_ra_kod
      */
     public class CStack
     {
+        //Variable Declarations
         public double X, Y, Z, T;
         public string entry;
         public string A, B, C, D, E, F, G, H;
         string letterAdress;
 
         /* CONSTRUCTOR: CStack
-         * PURPOSE: create a new stack and init X, Y, Z, T and the text entry
-         * PARAMETERS: --
+         * PURPOSE: Creates new stack and initializes values for the stack. 
+         * PARAMETERS: none
+         * RETURN: CStack
          */
         public CStack()
         {
@@ -91,9 +93,9 @@ namespace Inlamning_3_ra_kod
 
         }
         /* METHOD: Exit
-         * PURPOSE: called on exit, prepared for saving
-         * PARAMETERS: --
-         * RETURNS: --
+         * PURPOSE: called on exit, saving CStack values to file
+         * PARAMETERS: none
+         * RETURNS: CStack values to file
          */
         public void Exit()
         {
@@ -126,7 +128,7 @@ namespace Inlamning_3_ra_kod
         }
         /* METHOD: StackString
          * PURPOSE: construct a string to write out in a stack view
-         * PARAMETERS: --
+         * PARAMETERS: none
          * RETURNS: the string containing the values T, Z, Y, X with newlines 
          *   between them
          */
@@ -136,8 +138,8 @@ namespace Inlamning_3_ra_kod
         }
         /* METHOD: VarString
          * PURPOSE: construct a string to write out in a variable list
-         * PARAMETERS: --
-         * RETURNS: NOT YET IMPLEMENTED
+         * PARAMETERS: 
+         * RETURNS: string 
          */
         public string VarString()
         {
@@ -327,20 +329,18 @@ namespace Inlamning_3_ra_kod
             T = Z; Z = Y; Y = X; X = newX;
         }
         /* METHOD: SetAddress
-         * PURPOSE: 
+         * PURPOSE: assigns latest letter button pressed and stores it in variable letterAdress
          * PARAMETERS: string name - variable name
-         * RETURNS: --
-         * FEATURES: NOT YET IMPLEMENTED
+         * RETURNS: Stores adress of latest letter button pressed
          */
         public void SetAddress(string name)
         {
             letterAdress = name;
         }
         /* METHOD: SetVar
-         * PURPOSE: 
-         * PARAMETERS: --
-         * RETURNS: --
-         * FEATURES: NOT YET IMPLEMENTED
+         * PURPOSE: Stores value to letterAdress
+         * PARAMETERS: none
+         * RETURNS: Stores value to letterAdress
          */
         public void SetVar()
         {
@@ -376,10 +376,9 @@ namespace Inlamning_3_ra_kod
 
         }
         /* METHOD: GetVar
-         * PURPOSE: 
-         * PARAMETERS: --
-         * RETURNS: --
-         * FEATURES: NOT YET IMPLEMENTED
+         * PURPOSE: Recalls value stored in letterAdress
+         * PARAMETERS: none
+         * RETURNS: Sets X to the value stored in letterAdress and moves the stack up
          */
         public void GetVar()
         {
